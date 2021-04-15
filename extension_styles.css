@@ -1,0 +1,43 @@
+#blockExtension{
+    width: 300px;
+    background: #f5f7fa;
+    border-radius: 5px;
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+
+}
+#blockExtension ol{
+    margin: 0;
+    padding: 0;
+}
+
+.list-item{
+    background-color: #f5f7fa;
+    border-radius: 5px;
+    border: 1px solid #ff0063;
+    margin: 5px;
+    padding: 5px;
+    list-style-type: none;
+}
+.list-item:hover{
+    color: white;
+    background-color:  #ff0063;
+    cursor: pointer;
+}
+
+.header-item{
+    color: white;
+    background-color:  #ff0063;
+    border-radius: 5px;
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+}
+.header-item:hover{
+    cursor: pointer;
+    background: #f5f7fa;
+    color: black;
+    border: 1px solid #ff0063;
+}
