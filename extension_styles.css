@@ -7,10 +7,12 @@
     top: 10px;
     right: 20px;
 
+
 }
 #blockExtension ol{
     margin: 0;
     padding: 0;
+    
 }
 
 .list-item{
@@ -34,10 +36,34 @@
     text-align: center;
     margin: 5px;
     padding: 5px;
+    box-sizing: border-box;
 }
-.header-item:hover{
+
+
+.wrapperButtonEmotion{
+    display: flex;
+    margin: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.wrapperButtonEmotion div{
+    background: #ebab2a;
     cursor: pointer;
+    color: #f5f7fa;
+    padding: 3px;
+    margin: 3px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    
+}
+.wrapperButtonEmotion div:hover{
     background: #f5f7fa;
-    color: black;
+    color:  black;
     border: 1px solid #ff0063;
+    border-radius: 5px;
+    box-sizing: border-box;
+
 }
