@@ -51,6 +51,7 @@
 
 .wrapperButtonEmotion div{
     background: #ebab2a;
+    border: 1px solid white;
     cursor: pointer;
     color: #f5f7fa;
     padding: 3px;

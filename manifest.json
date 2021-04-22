@@ -20,9 +20,9 @@
     
     "content_scripts": [
         {
-            "matches": [ "https://tinder.com/*/*", "https://tinder.com/" ],
+            "matches": [ "https://tinder.com/*/*", "https://tinder.com/"],
             "persistent": false,
-            "js": [ "extension.js", "howAreYou.js", "howAreYourMood.js"],
+            "js": [ "extension.js", "howAreYou.js", "howAreYourMood.js", "aboutYourself.js", "areYouHobbies.js", "howIsYourDay.js" ],
             "css": ["extension_styles.css"],
             "run_at": "document_end"
         }
