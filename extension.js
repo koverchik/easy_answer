@@ -25,6 +25,44 @@ function cangeDom(){
 
     idElem[0].append(blockExtension);
 
+    function clickOnHeder(e){
+        
+        let idName = document.getElementById(e.target.getAttribute("class-data"));
+        let listHeadElem = document.getElementsByClassName("header-item");
+  
+
+        if( e.target.classList.contains('active-topic')){
+            e.target.classList.remove('active-topic')
+            let listAllOl = document.getElementsByTagName('ol');
+            for (let index = 0; index < listAllOl.length; index++) {
+           
+            listAllOl[index].style.display = 'none';
+                             
+             }
+            for (let i = 0; i < listHeadElem.length; i++) {        
+                  listHeadElem[i].style.display = 'flex';
+            } 
+
+            }else{
+                e.target.classList.add('active-topic'); 
+                for (let i = 0; i < listHeadElem.length; i++) {
+                    if(e.target !== listHeadElem[i]){
+                    listHeadElem[i].style.display = 'none';
+                    }
+                }
+            }
+        
+
+
+        if(idName.classList.contains("open-list")){
+            idName.style.display = 'none';
+            idName.classList.remove("open-list");
+
+        }else{
+            idName.style.display = 'flex';
+            idName.classList.add('open-list'); 
+        }
+    }
     function clickOnElement(e){
             
         const blockWithName = e.target.parentNode;
@@ -53,19 +91,24 @@ function cangeDom(){
       
     }
 
-   function createOneTheme (arrayItem, categoryName, classAnswer){
+   function createOneTheme (arrayItem, categoryName, classAnswer, className){
     // Создание категории (вопросов)
     let wrapperAllList = document.createElement('div');
     let helerElem = document.createElement('div');
     helerElem.innerHTML = classAnswer;
     helerElem.setAttribute('class', 'header-item');
     helerElem.setAttribute('topic-data', classAnswer);
+    helerElem.setAttribute('class-data', className);
+    helerElem.addEventListener( "click" , clickOnHeder);
     wrapperAllList.append(helerElem);
 
     let wrapperEmotions = document.createElement('div');
     wrapperAllList.append(wrapperEmotions);
 
     wrapperEmotions.setAttribute('class', 'wrapperButtonEmotion');
+    wrapperEmotions.setAttribute('id', className);
+    wrapperEmotions.setAttribute('style', 'display: none');
+
     blockExtension.append(wrapperAllList);
     arrayItem.forEach((item, i)=>{
      
@@ -73,6 +116,7 @@ function cangeDom(){
         let buttonElem = document.createElement('div');
         buttonElem.innerHTML = categoryName[i];
         buttonElem.setAttribute('class', 'buttonEmotion');
+     
         buttonElem.setAttribute('name-data', categoryName[i]);
         wrapperEmotions.append(buttonElem);
 
@@ -87,11 +131,11 @@ function cangeDom(){
       })
    }
 
-   createOneTheme(howAreYou, howAreYouTopic, "Как дела?");
-   createOneTheme(howAreYourMood, howAreYourMoodTopic, "Как настроение?");
-   createOneTheme(aboutYourSelf, aboutYourselfTopic, "Расскажи о себе");
-   createOneTheme(areYouHobbies, areYouHobbiesTopic, "Чем увлекаешься?");
-   createOneTheme(howIsYourDay , howIsYourDayTopic, "Как твой день проходит?");
+   createOneTheme(howAreYou, howAreYouTopic, "Как дела?", 'howAreYou');
+   createOneTheme(howAreYourMood, howAreYourMoodTopic, "Как настроение?", 'howAreYourMood');
+   createOneTheme(aboutYourSelf, aboutYourselfTopic, "Расскажи о себе", 'aboutYourself');
+   createOneTheme(areYouHobbies, areYouHobbiesTopic, "Чем увлекаешься?", 'areYouHobbies');
+   createOneTheme(howIsYourDay , howIsYourDayTopic, "Как твой день проходит?", 'howIsYourDay');
 }
 
 document.addEventListener('readystatechange', cangeDom);
