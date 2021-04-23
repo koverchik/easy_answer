@@ -22,7 +22,9 @@
         {
             "matches": [ "https://tinder.com/*/*", "https://tinder.com/"],
             "persistent": false,
-            "js": [ "extension.js", "howAreYou.js", "howAreYourMood.js", "aboutYourself.js", "areYouHobbies.js", "howIsYourDay.js" ],
+            "js": [ "extension.js", "howAreYou.js", "howAreYourMood.js", 
+                "aboutYourself.js", "areYouHobbies.js", "howIsYourDay.js", "whatAreYouDoing.js",
+                "whatAreYourLookingFor.js", "hello.js" ],
             "css": ["extension_styles.css"],
             "run_at": "document_end"
         }

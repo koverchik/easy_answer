@@ -1,14 +1,23 @@
 const topic = ["Как дела?", "Как настроение?", "Расскажи о себе", "Чем увлекаешься?", "Как твой день проходит?", "Чем занимаешься", "Что тут ищешь?", "Где вы живете?", "Как давно тут?", "Как настроение"];
+const helloTopic = ["#На_русском", "#Иностранные"];
 const howAreYouTopic = ["#Смешной", "#Сарказм", "#Серьезный", "#Ровно"];
 const howAreYourMoodTopic = ["#Ну_такое", "#Всё_хорошо", "#Веселый", "#Лучше"]
 const aboutYourselfTopic = ["#Милая", "#С_характером", "#Самая_самая"];
 const areYouHobbiesTopic = ["#Несерьезно", "#Приличная", "#Короткий"];
 const howIsYourDayTopic = ["#Все_хорошо", "#Не_очень", "#C_шуткой", "#Пичаль"];
+const whatAreYouDoingTopic = ["#Биология", "#C_юмором", "#Отстой_вопрос", "#Жэстачайшэ", "#Ирония"];
+const whatAreYourLookingForTopic = ["#Разговоры", "#Человека", "#Уведи_меня_уведи", "#Программист"];
 
 function cangeDom(){
     const idElem = document.getElementsByTagName('body');
     const blockExtension = document.createElement('div');
     blockExtension.setAttribute('id', 'blockExtension');
+
+    function clickLi (e){
+        const textAreaClick = document.getElementById("q1277748204");
+        textAreaClick.value += e.target.textContent;
+        
+    }
 
     function createElement(array){
         const fragment = new DocumentFragment();
@@ -17,6 +26,7 @@ function cangeDom(){
             let li = document.createElement('li');
             li.setAttribute('class', 'list-item');
             li.innerHTML = item;
+            li.addEventListener( "click" , clickLi);
             fragment.append(li);
         })
   
@@ -130,12 +140,17 @@ function cangeDom(){
         wrapperAllList.append(wtapperElem);
       })
    }
-
+// Создание отдельного блока 
+helloTopic
+    createOneTheme(hello, helloTopic, "Приветствия", 'hello');
    createOneTheme(howAreYou, howAreYouTopic, "Как дела?", 'howAreYou');
    createOneTheme(howAreYourMood, howAreYourMoodTopic, "Как настроение?", 'howAreYourMood');
    createOneTheme(aboutYourSelf, aboutYourselfTopic, "Расскажи о себе", 'aboutYourself');
    createOneTheme(areYouHobbies, areYouHobbiesTopic, "Чем увлекаешься?", 'areYouHobbies');
    createOneTheme(howIsYourDay , howIsYourDayTopic, "Как твой день проходит?", 'howIsYourDay');
+   createOneTheme(whatAreYouDoing , whatAreYouDoingTopic, "Что делаешь?", 'whatAreYouDoing');
+   createOneTheme(whatAreYourLookingFor ,whatAreYourLookingForTopic, "Что тут ищешь?", 'whatAreYourLookingFor');
+   
 }
 
 document.addEventListener('readystatechange', cangeDom);
