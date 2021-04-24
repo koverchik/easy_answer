@@ -1,6 +1,6 @@
 #blockExtension{
     width: 300px;
-    background: #f5f7fa;
+    background: white;
     border-radius: 5px;
     display: block;
     position: absolute;
@@ -48,6 +48,7 @@
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+    background: white;
 }
 
 .wrapperButtonEmotion div{

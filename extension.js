@@ -1,4 +1,3 @@
-const topic = ["Как дела?", "Как настроение?", "Расскажи о себе", "Чем увлекаешься?", "Как твой день проходит?", "Чем занимаешься", "Что тут ищешь?", "Где вы живете?", "Как давно тут?", "Как настроение"];
 const helloTopic = ["#На_русском", "#Иностранные"];
 const howAreYouTopic = ["#Смешной", "#Сарказм", "#Серьезный", "#Ровно"];
 const howAreYourMoodTopic = ["#Ну_такое", "#Всё_хорошо", "#Веселый", "#Лучше"]
@@ -7,6 +6,8 @@ const areYouHobbiesTopic = ["#Несерьезно", "#Приличная", "#К
 const howIsYourDayTopic = ["#Все_хорошо", "#Не_очень", "#C_шуткой", "#Пичаль"];
 const whatAreYouDoingTopic = ["#Биология", "#C_юмором", "#Отстой_вопрос", "#Жэстачайшэ", "#Ирония"];
 const whatAreYourLookingForTopic = ["#Разговоры", "#Человека", "#Уведи_меня_уведи", "#Программист"];
+const wereDoYouLiveTopic = [ "#Отшутиться", "#Дерзкая"];
+const howLongThereTopic = ["#Без_понятия", "#Вчера"];
 
 function cangeDom(){
     const idElem = document.getElementsByTagName('body');
@@ -14,9 +15,17 @@ function cangeDom(){
     blockExtension.setAttribute('id', 'blockExtension');
 
     function clickLi (e){
-        const textAreaClick = document.getElementById("q1277748204");
-        textAreaClick.value += e.target.textContent;
-        
+        const textAreaClick = document.getElementsByTagName('textarea');
+       
+        for (let index = 0; index < textAreaClick.length; index++) {
+            if(textAreaClick[index].hasAttribute("placeholder") && (textAreaClick[index].getAttribute("placeholder") == "Введите сообщение")){
+                console.log("hello" + textAreaClick.value)
+                console.log( textAreaClick)
+                textAreaClick[index].focus();
+                textAreaClick[index].value += e.target.textContent;
+            }
+        }
+     
     }
 
     function createElement(array){
@@ -95,7 +104,7 @@ function cangeDom(){
              elemClick.classList.add('active');
              elemClick.style.flexDirection = 'column';
              elemClick.style.overflow = 'scroll';
-             elemClick.style.height = document.documentElement.clientHeight + "px";
+             elemClick.style.height = (document.documentElement.clientHeight - 200) + "px";
          }
        
       
@@ -141,7 +150,7 @@ function cangeDom(){
       })
    }
 // Создание отдельного блока 
-helloTopic
+
     createOneTheme(hello, helloTopic, "Приветствия", 'hello');
    createOneTheme(howAreYou, howAreYouTopic, "Как дела?", 'howAreYou');
    createOneTheme(howAreYourMood, howAreYourMoodTopic, "Как настроение?", 'howAreYourMood');
@@ -150,7 +159,8 @@ helloTopic
    createOneTheme(howIsYourDay , howIsYourDayTopic, "Как твой день проходит?", 'howIsYourDay');
    createOneTheme(whatAreYouDoing , whatAreYouDoingTopic, "Что делаешь?", 'whatAreYouDoing');
    createOneTheme(whatAreYourLookingFor ,whatAreYourLookingForTopic, "Что тут ищешь?", 'whatAreYourLookingFor');
-   
+   createOneTheme(wereDoYouLive ,wereDoYouLiveTopic, "Где ты живешь?", 'wereDoYouLive');
+   createOneTheme(howLongThere , howLongThereTopic, "Как долго здесь?", 'howLongThere');
 }
 
 document.addEventListener('readystatechange', cangeDom);
