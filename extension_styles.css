@@ -70,3 +70,11 @@
     box-sizing: border-box;
 
 }
+
+#plaseholder{
+    position: absolute;
+    font-size: 8pt;
+    top: 2px;
+    color: #ff0063;
+}
+

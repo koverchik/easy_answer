@@ -19,10 +19,17 @@ function cangeDom(){
        
         for (let index = 0; index < textAreaClick.length; index++) {
             if(textAreaClick[index].hasAttribute("placeholder") && (textAreaClick[index].getAttribute("placeholder") == "Введите сообщение")){
-                console.log("hello" + textAreaClick.value)
-                console.log( textAreaClick)
                 textAreaClick[index].focus();
                 textAreaClick[index].value += e.target.textContent;
+                let p = document.createElement('p');
+                p.setAttribute('id', 'plaseholder');
+                p.style.marginTop = "50px";
+                p.innerHTML = "Введите любой сивол для подтверждения ввода";
+                textAreaClick[index].before(p);
+                textAreaClick[index].addEventListener('keydown', (event) => {
+                    let plaseholder = document.getElementById('plaseholder');
+                    if (plaseholder !== null){plaseholder.remove();}
+                    });
             }
         }
      
