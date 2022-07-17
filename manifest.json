@@ -1,33 +1,35 @@
 {
-    "manifest_version": 2,
-    "name": "Easy answer",
-    "description": "Do you answers boring questions every day? Get rid of the routine. Download the extension!",
-    "version": "1.0",
-    "author": "koverchik",
-    "icons": {
-             "16": "icon-16.png",
-             "48": "icon-48.png",
-             "128": "icon-128.png"
-                       },
-    "browser_action": {
-            "default_icon": "icon-48.png",
-            "default_title": "Горячие ответы"
-        },
-    
-    "permissions": [
-             "background"
-          ],
-    
-    "content_scripts": [
-        {
-            "matches": [ "https://tinder.com/*/*", "https://tinder.com/"],
-            "persistent": false,
-            "js": [ "extension.js", "howAreYou.js", "howAreYourMood.js", 
-                "aboutYourself.js", "areYouHobbies.js", "howIsYourDay.js", "whatAreYouDoing.js",
-                "whatAreYourLookingFor.js", "hello.js", "wereDoYouLive.js", "howLongThere.js" ],
-            "css": ["extension_styles.css"],
-            "run_at": "document_end"
-        }
-    ]
-    
+  "manifest_version": 3,
+  "name": "Easy answer",
+  "description": "Do you answers boring questions every day? Get rid of the routine. Download the extension!",
+  "version": "1.2",
+  "author": "koverchik",
+  "icons": {
+    "16": "icon-16.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png"
+  },
+  "permissions": ["background"],
+
+  "content_scripts": [
+    {
+      "matches": ["https://tinder.com/*/*", "https://tinder.com/"],
+      "persistent": false,
+      "js": [
+        "extension.js",
+        "howAreYou.js",
+        "howAreYourMood.js",
+        "aboutYourself.js",
+        "areYouHobbies.js",
+        "howIsYourDay.js",
+        "whatAreYouDoing.js",
+        "whatAreYourLookingFor.js",
+        "hello.js",
+        "wereDoYouLive.js",
+        "howLongThere.js"
+      ],
+      "css": ["extension_styles.css"],
+      "run_at": "document_end"
     }
+  ]
+}

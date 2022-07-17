@@ -1,80 +1,73 @@
-#blockExtension{
-    width: 300px;
-    background: white;
-    border-radius: 5px;
-    display: block;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-
-
+#blockExtension {
+  width: 300px;
+  background: white;
+  border-radius: 5px;
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 20px;
 }
-#blockExtension ol{
-    margin: 0;
-    padding: 0;
-    
+#blockExtension ol {
+  margin: 0;
+  padding: 0;
 }
 
-.list-item{
-    background-color: #f5f7fa;
-    border-radius: 5px;
-    border: 1px solid #ff0063;
-    margin: 5px;
-    padding: 5px;
-    list-style-type: none;
+.list-item {
+  background-color: #f5f7fa;
+  border-radius: 5px;
+  border: 1px solid #ff0063;
+  margin: 5px;
+  padding: 5px;
+  list-style-type: none;
 }
-.list-item:hover{
-    color: white;
-    background-color:  #ff0063;
-    cursor: pointer;
-}
-
-.header-item{
-    color: white;
-    background-color:  #ff0063;
-    border-radius: 5px;
-    text-align: center;
-    margin: 5px;
-    padding: 5px;
-    box-sizing: border-box;
-    cursor: pointer;
+.list-item:hover {
+  color: white;
+  background-color: #ff0063;
+  cursor: pointer;
 }
 
-
-.wrapperButtonEmotion{
-    display: flex;
-    margin: 5px;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    background: white;
+.header-item {
+  color: white;
+  background-color: #ff0063;
+  border-radius: 5px;
+  text-align: center;
+  margin: 5px;
+  padding: 5px;
+  box-sizing: border-box;
+  cursor: pointer;
 }
 
-.wrapperButtonEmotion div{
-    background: #ebab2a;
-    border: 1px solid white;
-    cursor: pointer;
-    color: #f5f7fa;
-    padding: 3px;
-    margin: 3px;
-    box-sizing: border-box;
-    border-radius: 5px;
-    
-}
-.wrapperButtonEmotion div:hover{
-    background: #f5f7fa;
-    color:  black;
-    border: 1px solid #ff0063;
-    border-radius: 5px;
-    box-sizing: border-box;
-
+.wrapperButtonEmotion {
+  display: flex;
+  margin: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  background: white;
 }
 
-#plaseholder{
-    position: absolute;
-    font-size: 8pt;
-    top: 2px;
-    color: #ff0063;
+.wrapperButtonEmotion div {
+  background: #ebab2a;
+  border: 1px solid white;
+  cursor: pointer;
+  color: #f5f7fa;
+  padding: 3px;
+  margin: 3px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.wrapperButtonEmotion div:hover {
+  background: #f5f7fa;
+  color: black;
+  border: 1px solid #ff0063;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
 
+#plaseholder {
+  position: absolute;
+  font-size: 8pt;
+  top: 2px;
+  color: #ff0063;
+}
